@@ -1,6 +1,6 @@
 {
 	"name": "markdownpreviewopener",
-	"displayName": "MarkdownPreviewOpener",
+	"displayName": "Markdown Preview Opener",
 	"description": "Automatically opens/closes the markdown preview when you open/close markdown files",
 	"version": "0.0.1",
 	"engines": {
@@ -14,7 +14,9 @@
 	],
 	"main": "./out/extension.js",
 	"scripts": {
-		"vscode:prepublish": "npm run compile",
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile",
@@ -27,8 +29,11 @@
 		"@types/vscode": "^1.38.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
+		"ts-loader": "^6.0.4",
 		"tslint": "^5.12.1",
-		"vscode-test": "^1.0.2"
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.0.2",
+		"webpack": "^4.39.3",
+		"webpack-cli": "^3.3.8"
 	}
 }
